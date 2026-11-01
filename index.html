@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UAE F&amp;B POS Market Entry · DotPe</title>
+<meta name="description" content="UAE F&B POS market landscape, analysis and Year-1 plan for DotPe.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#FFFFFF; --surface:#FFFFFF; --surface-2:#F8F8F8; --tint:#F1EDFB;
+  --ink:#000000; --text:#262626; --muted:#717171; --line:#DEDEDE;
+  --accent:#006AFF; --accent-ink:#006AFF; --warm:#FF5C39;
+  --purple:#7854A8; --purple-deep:#2D146F; --lavender:#AE9BF1;
+  --grad:linear-gradient(45deg,#7854A8,#2D146F);
+  --oracle:#2A78D6; --foodics:#E8692F; --petpooja:#1BAF7A; --sapaad:#EDA100; --tail:#C9C9C9;
+  --good-bg:#E3F3EA; --good:#0B5A3A; --mid-bg:#FFF0D6; --mid:#7A5200; --low-bg:#EEEEEE; --low:#555555; --conf-bg:#F1EDFB; --conf:#4B2F86;
+  --s-bg:#EEF8F2; --w-bg:#FFF1EC; --o-bg:#EEF4FF; --t-bg:#F4EFFB;
+  --hero:#0C0A24; --hero-text:#FFFFFF; --hero-muted:#B9B3D6;
+  --shadow:0 2px 14px rgba(0,0,0,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 'Manrope',system-ui,-apple-system,Segoe UI,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{color:var(--ink);margin:0}
+h1,h2{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.02em}
+.hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--purple)}
+.hero .hl{background:linear-gradient(45deg,#C9B6FF,#AE9BF1);-webkit-background-clip:text;background-clip:text}
+.pill{display:inline-flex;align-items:center;gap:8px;border-radius:43px;padding:14px 26px;font-weight:600;font-size:16px;text-decoration:none;border:1px solid var(--accent)}
+.pill.solid{background:var(--accent);color:#fff}
+.pill.ghost{color:var(--accent);background:transparent}
+.hero .pill.ghost{color:#fff;border-color:rgba(255,255,255,.5)}
+h2{font-size:clamp(26px,3.2vw,38px);line-height:1.15}
+h3{font-size:18px;font-weight:600;line-height:1.3}
+p{margin:0 0 12px}
+a{color:var(--accent-ink)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.brand img{height:26px;display:block}
+.brand{font-weight:700;color:var(--ink);white-space:nowrap;font-size:15px}
+.links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1}
+.links::-webkit-scrollbar{display:none}
+.links a{white-space:nowrap;text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:6px 10px;border-radius:999px}
+.links a:hover{color:var(--ink);background:var(--surface-2)}
+.links a.active{color:var(--purple-deep);background:var(--tint);font-weight:600}
+.progress{position:absolute;left:0;bottom:-1px;height:2px;background:var(--accent);width:0}
+/* hero */
+.hero{background:radial-gradient(120% 140% at 0% 100%,#3A1E7A 0%,rgba(58,30,122,0) 55%),linear-gradient(160deg,#0C0A24 0%,#100C33 55%,#2D146F 100%);color:var(--hero-text);padding:88px 0 72px}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--purple)}
+.hero .eyebrow{color:var(--lavender)}
+.hero h1{color:var(--hero-text);font-size:clamp(34px,5.4vw,60px);line-height:1.06;margin:14px 0 18px;max-width:900px}
+.hero p.lead{color:var(--hero-muted);font-size:clamp(17px,1.8vw,20px);max-width:760px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.chip{font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.22);color:var(--hero-muted)}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.hstat{border-top:2px solid rgba(255,255,255,.25);padding-top:14px}
+.hstat b{display:block;font-family:'Manrope',sans-serif;font-size:clamp(26px,3vw,36px);color:var(--hero-text);line-height:1.1}
+.hstat span{font-size:14px;color:var(--hero-muted)}
+/* sections */
+section.sec{padding:72px 0;border-bottom:1px solid var(--line)}
+section.sec:nth-of-type(even){background:var(--surface-2)}
+section.sec.black{background:#000;color:#CFCFCF;border-color:#000}
+section.sec.black h2,section.sec.black h3{color:#fff}
+section.sec.black .sec-head p{color:#A9A9A9}
+section.sec.black .sec-head .num{color:var(--lavender)}
+.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:32px;max-width:820px}
+.sec-head .num{color:var(--purple);font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+.sec-head p{color:var(--muted);font-size:17px;margin:0}
+.sub{margin:40px 0 16px;display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.sub h3{font-size:20px}
+.note{font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;box-shadow:var(--shadow)}
+.card h3{margin-bottom:8px}
+.card p:last-child{margin-bottom:0}
+.card{border-radius:16px}
+.card.top{border-top:4px solid var(--purple)}
+.card.dark{background:linear-gradient(135deg,#0C0A24,#2D146F);border-color:#1a1240;color:var(--hero-muted)}
+.card.dark h3{color:var(--hero-text)}
+.big{font-family:'Manrope',sans-serif;font-size:38px;font-weight:600;color:var(--ink);line-height:1.05;display:block;margin-bottom:6px}
+.card.dark .big{color:var(--hero-text)}
+ul.clean{margin:0;padding-left:18px} ul.clean li{margin-bottom:6px}
+/* tables */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{text-align:left;font-weight:700;color:var(--ink);background:#F3F3F3;padding:12px 14px;font-size:13px;letter-spacing:.02em;white-space:nowrap}
+td{padding:12px 14px;border-top:1px solid var(--line);vertical-align:top}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;white-space:nowrap}
+.t-good{background:var(--good-bg);color:var(--good)} .t-mid{background:var(--mid-bg);color:var(--mid)} .t-low{background:var(--low-bg);color:var(--low)} .t-conf{background:var(--conf-bg);color:var(--conf)}
+/* tabs */
+.tabs{display:inline-flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;flex-wrap:wrap}
+.tabs button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:14px;font-weight:500;padding:7px 14px;border-radius:999px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--accent);color:#fff}
+.tabs button:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+/* charts */
+.chart-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;box-shadow:var(--shadow)}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:18px;font-size:14px}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.brow{display:grid;grid-template-columns:170px 1fr 56px;gap:14px;align-items:center;margin-bottom:10px}
+.brow .lbl{font-size:14px;color:var(--ink);text-align:right}
+.brow .lbl small{display:block;color:var(--muted);font-size:12px}
+.brow .val{font-weight:700;font-size:14px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.bar{height:26px;border-radius:0 5px 5px 0;transition:width .5s ease}
+.stack{display:flex;gap:2px;height:34px}
+.stack div{display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:#13294B;transition:flex-grow .5s ease;min-width:0;overflow:hidden;cursor:default}
+.stack div.on-blue{color:#fff}
+.stack div:first-child{border-radius:5px 0 0 5px} .stack div:last-child{border-radius:0 5px 5px 0}
+.srow{display:grid;grid-template-columns:170px 1fr;gap:14px;align-items:center;margin-bottom:12px}
+.chart-foot{display:grid;grid-template-columns:1.4fr 1fr;gap:24px;margin-top:8px}
+.insight{border-left:3px solid var(--purple);padding:2px 0 2px 14px;margin-bottom:14px}
+.insight b{color:var(--ink);display:block}
+/* timeline */
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:3px solid var(--line);margin-top:8px}
+.tl div{padding:18px 18px 0 0;position:relative}
+.tl div::before{content:"";position:absolute;top:-10px;left:0;width:16px;height:16px;border-radius:50%;background:var(--ink);border:3px solid var(--bg)}
+.tl div.hl::before{background:var(--warm)}
+.tl b{display:block;color:var(--accent-ink);font-size:14px}
+.tl div.hl b{color:var(--warm)}
+/* swot */
+.swot .card{border:0}
+.swot .s{background:var(--s-bg)} .swot .w{background:var(--w-bg)} .swot .o{background:var(--o-bg)} .swot .t{background:var(--t-bg)}
+.swot h3{font-size:20px;margin-bottom:12px}
+/* phases */
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.phase{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;box-shadow:var(--shadow);position:relative}
+.phase .when{font-size:13px;font-weight:600;color:var(--accent-ink);letter-spacing:.04em;text-transform:uppercase}
+.phase h3{font-size:20px;margin:6px 0 12px}
+.statement{background:linear-gradient(135deg,#0C0A24,#2D146F);color:var(--hero-text);border-radius:14px;padding:32px;font-family:'Manrope',sans-serif;font-size:clamp(20px,2.3vw,26px);line-height:1.4;margin-bottom:32px}
+.statement small{display:block;font-family:'Manrope',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--lavender);margin-bottom:10px}
+/* sliders */
+.weights{display:grid;grid-template-columns:repeat(3,1fr);gap:12px 24px;margin-bottom:16px}
+.weights label{font-size:14px;display:flex;flex-direction:column;gap:4px;color:var(--ink)}
+.weights label span{display:flex;justify-content:space-between}
+.weights output{color:var(--muted);font-variant-numeric:tabular-nums}
+input[type=range]{accent-color:var(--accent);width:100%}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:14px;padding:7px 14px;border-radius:8px;cursor:pointer}
+.scorebar{height:8px;background:var(--surface-2);border-radius:4px;margin-top:6px;overflow:hidden}
+.scorebar i{display:block;height:100%;background:var(--grad);border-radius:4px;transition:width .4s}
+/* org chart */
+.org{overflow-x:auto;padding:8px 0 4px}
+.org-tree{min-width:980px}
+.node{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;box-shadow:var(--shadow);font-size:13px;line-height:1.35;transition:opacity .35s, filter .35s;position:relative}
+.node b{display:block;color:var(--ink);font-size:14px}
+.node .meta{color:var(--muted);font-size:12px}
+.node .ph{position:absolute;top:-9px;right:10px;font-size:11px;font-weight:700;padding:1px 8px;border-radius:999px}
+.ph0{background:#13294B;color:#fff} .ph1{background:#2A78D6;color:#fff} .ph2{background:#1BAF7A;color:#0b2a1e} .ph3{background:var(--low-bg);color:var(--low);border:1px dashed var(--muted)}
+.node.y2{border-style:dashed;background:transparent;box-shadow:none}
+.node.off{opacity:.18;filter:grayscale(1)}
+.node.root{border:2px solid var(--ink);text-align:center;max-width:300px;margin:0 auto}
+.lvl{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative;margin-top:44px}
+.lvl::before{content:"";position:absolute;top:-24px;left:16.66%;right:16.66%;border-top:2px solid var(--line)}
+.trunk{width:2px;height:22px;background:var(--line);margin:0 auto}
+.branch{display:flex;flex-direction:column;gap:12px;position:relative}
+.branch::before{content:"";position:absolute;top:-24px;left:50%;height:24px;border-left:2px solid var(--line)}
+.branch-head{text-align:center;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:6px;border-radius:8px;background:var(--surface-2)}
+.hq{margin-top:24px;border:1px dashed var(--muted);border-radius:12px;padding:14px 16px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;font-size:13px}
+.hq b{color:var(--ink)}
+.hq span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+/* headcount chart */
+.hc{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:end;height:220px;padding:0 4px;border-bottom:2px solid var(--line)}
+.hc .col{display:flex;flex-direction:column;align-items:center;justify-content:end;height:100%;gap:6px}
+.hc .colbar{width:56%;max-width:80px;border-radius:6px 6px 0 0;display:flex;flex-direction:column-reverse;overflow:hidden}
+.hc .colbar i{display:block}
+.hc .colval{font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.hc-x{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;font-size:13px;color:var(--muted);text-align:center;margin-top:8px}
+/* calculator */
+.calc{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;align-items:start}
+.calc .out{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.calc .out div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px}
+.calc .out b{display:block;font-family:'Manrope',sans-serif;font-size:26px;color:var(--ink);font-variant-numeric:tabular-nums}
+.calc .out span{font-size:13px;color:var(--muted)}
+.calc .out .total{grid-column:1/-1;background:linear-gradient(135deg,#0C0A24,#2D146F);border-color:#1a1240}
+.calc .out .total b{color:var(--hero-text);font-size:32px} .calc .out .total span{color:var(--hero-muted)}
+.sources li{margin-bottom:6px;font-size:14px}
+footer{background:#000;color:#9A9A9A;padding:56px 0 40px;font-size:14px}
+footer .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:24px;margin-bottom:32px}
+footer h4{color:#fff;font-size:15px;margin:0 0 12px}
+footer a{color:#CFCFCF;text-decoration:none;display:block;margin-bottom:8px}
+footer a:hover{color:#fff}
+footer .fine{border-top:1px solid #222;padding-top:20px;font-size:13px}
+.products{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.prod{background:#111;border:1px solid #262626;border-radius:16px;padding:20px}
+.prod b{display:block;color:#fff;font-size:20px;font-weight:800;margin-bottom:6px}
+.prod span{font-size:14px;color:#BDBDBD;line-height:1.5;display:block}
+.prod i{display:inline-block;font-style:normal;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--lavender);margin-bottom:10px}
+.formats{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.formats span{border:1px solid #333;color:#E5E5E5;border-radius:999px;padding:6px 14px;font-size:14px}
+.ind{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ind .card h3{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.navcta{white-space:nowrap;border:1px solid var(--accent);color:var(--accent);border-radius:35px;padding:8px 16px;font-size:14px;font-weight:600;text-decoration:none}
+.navcta:hover{background:var(--accent);color:#fff}
+@media (max-width:900px){
+  .products{grid-template-columns:1fr 1fr}
+  .ind{grid-template-columns:1fr}
+  footer .fgrid{grid-template-columns:1fr 1fr}
+  .g3,.g4,.phases,.weights{grid-template-columns:1fr 1fr}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .chart-foot,.calc{grid-template-columns:1fr}
+  .tl{grid-template-columns:1fr 1fr;row-gap:24px}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px}
+  .g2,.g3,.g4,.phases,.weights{grid-template-columns:1fr}
+  .brow{grid-template-columns:110px 1fr 48px} .srow{grid-template-columns:1fr}
+  .srow .lbl{text-align:left}
+  .tl{grid-template-columns:1fr}
+  .brand{display:none}
+  .org-tree{min-width:0}
+  .lvl{grid-template-columns:1fr;margin-top:20px}
+  .lvl::before,.branch::before,.trunk{display:none}
+  .org-tree>div[style*='justify-content:center']{flex-direction:column}
+  section.sec{padding:52px 0}
+}
+@media print{.nav,.tabs,.weights,.btn{display:none}section.sec{break-inside:avoid-page}}
+
+/* v3 additions */
+.pm td.lvl3,.pm td.lvl2,.pm td.lvl1,.pm td.lvl0{white-space:nowrap;font-size:13px;font-weight:600}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:3px;background:var(--line)}
+.lvl3 .dot{background:var(--purple)} .lvl2 .dot.a,.lvl2 .dot.b{background:var(--purple)} .lvl1 .dot.a{background:var(--purple)}
+.lvl3{color:var(--purple-deep)} .lvl2{color:#4B2F86} .lvl1{color:var(--muted)} .lvl0{color:#B0B0B0}
+.et-row{display:grid;grid-template-columns:190px 1fr;gap:14px;align-items:center;margin-bottom:12px}
+.et-row .lbl{font-size:14px;color:var(--ink);text-align:right;line-height:1.3}
+.et-row .lbl small{display:block;color:var(--muted);font-size:12px}
+.offer{display:grid;grid-template-columns:1.1fr 1fr;gap:20px;align-items:stretch;margin-bottom:24px}
+.offer .give,.offer .get{border-radius:16px;padding:22px}
+.offer .give{background:var(--tint)} .offer .get{background:var(--surface);border:1px solid var(--line)}
+.offer h3{margin-bottom:10px}
+.price-head{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:18px 20px;margin-bottom:14px}
+.price-head b{color:var(--ink)}
+.stages{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
+.stages div{background:var(--surface-2);border-radius:10px;padding:12px 14px;font-size:14px}
+.stages div b{display:block;color:var(--purple-deep);font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+td .brands{font-size:13px;color:var(--text)}
+td .src{display:block;font-size:11px;color:var(--muted);margin-top:2px}
+.node .sal{display:table;margin-top:8px;font-size:12px;font-weight:700;color:var(--purple-deep);background:var(--tint);border-radius:999px;padding:2px 9px}
+.org2{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;position:relative}
+.org2::before{content:"";position:absolute;top:-22px;left:16.66%;right:16.66%;border-top:2px solid var(--line)}
+.col2{display:flex;flex-direction:column;gap:12px;position:relative}
+.col2::before{content:"";position:absolute;top:-22px;left:50%;height:22px;border-left:2px solid var(--line)}
+.leads{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.leads .node{min-width:250px;text-align:center;border:2px solid var(--ink)}
+.years{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:8px}
+.years>div{padding:18px 18px 18px 0;border-top:4px solid var(--line);position:relative}
+.years>div.now{border-top-color:var(--purple)}
+.years>div.gate{border-top-color:var(--accent)}
+.years b{display:block;color:var(--ink);font-size:15px}
+.years span{display:block;font-size:13px;color:var(--purple);font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px}
+.paths{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:stretch}
+.paths .or{align-self:center;font-weight:800;color:var(--muted);font-size:14px}
+.path{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+.path h3{font-size:20px;margin-bottom:6px}
+.path .when{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.path ol{margin:10px 0 0;padding-left:18px}
+.path ol li{margin-bottom:8px}
+.trigger{margin-top:16px;background:linear-gradient(135deg,#0C0A24,#2D146F);color:#E7E3F7;border-radius:16px;padding:22px}
+.trigger h3{color:#fff;margin-bottom:10px}
+.trigger table{color:#E7E3F7}
+.trigger th{background:rgba(255,255,255,.08);color:#fff}
+.trigger td{border-top-color:rgba(255,255,255,.12)}
+.foot-note{font-size:13px;color:var(--muted);border-top:1px solid var(--line);margin-top:20px;padding-top:12px}
+@media (max-width:900px){.offer,.paths{grid-template-columns:1fr}.paths .or{justify-self:center}.stages{grid-template-columns:1fr}.years{grid-template-columns:1fr 1fr}.org2{grid-template-columns:1fr}.org2::before,.col2::before{display:none}}
+@media (max-width:600px){.et-row{grid-template-columns:1fr}.et-row .lbl{text-align:left}.years{grid-template-columns:1fr}}
+
+sup{font-size:.6em;color:var(--purple);font-weight:700;margin-left:1px}
+.hero sup,.black sup,.card.dark sup,.prod sup{color:var(--lavender)}
+.brand svg{height:26px;width:auto;display:block;color:#000}
+footer svg{width:120px;height:auto;display:block}
+.abbr{font-size:12px;line-height:1.6;color:var(--muted);border-top:1px solid var(--line);margin:20px 0 0;padding-top:10px}
+.abbr b{color:var(--ink);font-weight:700}
+.abbr.dark{color:#A9A6BF;border-top-color:rgba(255,255,255,.14)}
+.abbr.dark b{color:#fff}
+td[rowspan]{vertical-align:middle}
+.card.dark .note{color:#B9B3D6}
+.grid>*{min-width:0}
+.tbl-wrap{max-width:100%}
+</style>
+</head>
+
+<body>
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="DotPe home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102.858 26.209" role="img" aria-label="DotPe" fill="currentColor"><g transform="translate(15792.213 8901.324)"><path d="M8.627-19.6H1.894V-2.965H8.627c5.023,0,8.587-3.477,8.587-8.331S13.664-19.6,8.627-19.6ZM8.411-7.162H6.5V-15.4H8.411A3.877,3.877,0,0,1,12.516-11.3,3.906,3.906,0,0,1,8.411-7.162ZM25.829-2.544c4.17,0,7.195-2.873,7.195-6.837S30-16.218,25.829-16.218s-7.195,2.859-7.195,6.837S21.645-2.544,25.829-2.544Zm0-3.971a2.7,2.7,0,0,1-2.768-2.866,2.7,2.7,0,0,1,2.768-2.866A2.707,2.707,0,0,1,28.6-9.381a2.7,2.7,0,0,1-2.768,2.866Zm16-.321A1.361,1.361,0,0,1,40.347-8.31v-4.084h3.112v-3.4H40.235V-19.55h-.908l-5.75,6.123v1.033h2.349v4.842a4.222,4.222,0,0,0,4.563,4.587H43.53V-6.836ZM52.894-19.6H45.811V-2.965H50.4V-7.559h2.489a5.921,5.921,0,0,0,6.163-6.03A5.905,5.905,0,0,0,52.894-19.6Zm-.549,8.039H50.4V-15.6h1.94a1.911,1.911,0,0,1,2,2.019A1.911,1.911,0,0,1,52.344-11.561ZM74.074-9.5a6.664,6.664,0,0,0-7-6.715A6.692,6.692,0,0,0,60.1-9.391a6.73,6.73,0,0,0,6.97,6.847A6.757,6.757,0,0,0,73.792-7.3h-4.4a2.577,2.577,0,0,1-2.32,1.2,2.493,2.493,0,0,1-2.62-2.233h9.529a8.131,8.131,0,0,0,.091-1.17Zm-7-3.252a2.579,2.579,0,0,1,2.646,1.975H64.531A2.484,2.484,0,0,1,67.073-12.755Z" transform="translate(-15763.429 -8877.148)"/><path d="M21.72,0a4.357,4.357,0,0,1,4.344,4.369V21.84a4.357,4.357,0,0,1-4.344,4.369H4.345A4.357,4.357,0,0,1,0,21.84V4.369A4.357,4.357,0,0,1,4.345,0ZM7.6,8.738a2.548,2.548,0,1,0,2.534,2.548A2.548,2.548,0,0,0,7.6,8.738Zm10.859,0A2.548,2.548,0,1,0,21,11.286,2.548,2.548,0,0,0,18.462,8.738Z" transform="translate(-15792.213 -8901.324)" fill-rule="evenodd"/></g></svg></a>
+    <div class="links" id="navlinks">
+      <a href="#summary">Summary</a>
+      <a href="#dotpe">DotPe today</a>
+      <a href="#landscape">Landscape</a>
+      <a href="#capture">Market capture</a>
+      <a href="#competitors">Competitors</a>
+      <a href="#swot">SWOT</a>
+      <a href="#gap">Gap</a>
+      <a href="#strategy">Year-1 plan</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#org">Team</a>
+      <a href="#numbers">Numbers</a>
+      <a href="#expansion">Expansion</a>
+    </div>
+    <a class="navcta" href="https://dotpe.in/" target="_blank" rel="noopener">dotpe.in ↗</a>
+  </div>
+  <div class="progress" id="progress"></div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">UAE market entry · Prepared for DotPe</div>
+    <h1>Taking <span class="hl">full-stack food tech</span> to the UAE</h1>
+    <p class="lead">UAE F&amp;B<sup>*</sup> POS<sup>*</sup> landscape, analysis and a Year-1 plan for 2027.</p>
+    <div class="hero-meta">
+      <a class="pill solid" href="#summary">Read the summary</a>
+      <a class="pill ghost" href="#strategy">Year-1 plan</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><b>USD<sup>*</sup> 18.6bn</b><span>UAE foodservice, 2025</span></div>
+      <div class="hstat"><b>11.7%</b><span>CAGR<sup>*</sup> to 2034</span></div>
+      <div class="hstat"><b>29,303</b><span>food outlets in Dubai</span></div>
+      <div class="hstat"><b>Jul 2027</b><span>e-invoicing for the mid-market</span></div>
+    </div>
+    <p class="abbr dark"><b>*F&amp;B</b> Food and beverage · <b>*POS</b> Point of sale — billing and ordering system · <b>*USD</b> US dollar · <b>*CAGR</b> Compound annual growth rate</p>
+  </div>
+</header>
+
+<main>
+
+<section class="sec" id="summary">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">Executive summary</span><h2>The case in <span class="hl">four points</span></h2></div>
+    <div class="grid g2">
+      <div class="card top"><h3>Large and fragmented</h3><p>A fast-growing market with no POS vendor leading every outlet type.</p></div>
+      <div class="card top"><h3>Casual dining is the opening</h3><p>The largest segment is split across many systems. Hotels and premium dining are locked in.</p></div>
+      <div class="card top" style="border-top-color:var(--warm)"><h3>2027 is a switching year</h3><p>Margins are under pressure and e-invoicing becomes mandatory — operators must review their stack.</p></div>
+      <div class="card dark"><h3>Recommendation</h3><p>Launch in Dubai in January 2027 through known networks and master franchisees, with a 2027 Launch Offer. Year-1 investment ~AED 1M against ~AED 0.66M billings in the worst case.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec black" id="dotpe">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">DotPe today</span><h2>What DotPe brings</h2><p>75 lakh+ businesses in India. One full-stack food-tech suite.</p></div>
+    <div class="products">
+      <div class="prod"><i>Operations</i><b>Rista</b><span>Billing, inventory, payments, core operations</span></div>
+      <div class="prod"><i>AI<sup>*</sup> host</i><b>Sova</b><span>Engages guests and takes orders</span></div>
+      <div class="prod"><i>Guest memory</i><b>Sovi</b><span>Customer intelligence for repeat visits</span></div>
+      <div class="prod"><i>Growth · 2026</i><b>Amello</b><span>AI marketing and growth engine</span></div>
+      <div class="prod"><i>Intelligence</i><b>Horizon</b><span>Real-time revenue and margins</span></div>
+    </div>
+    <div class="formats"><span>Quick Service</span><span>Dine-in</span><span>Pubs, Bars &amp; Breweries</span><span>Cloud Kitchen</span><span>Hotel &amp; In-room Dining</span></div>
+    <p class="abbr dark"><b>*AI</b> Artificial intelligence</p>
+  </div>
+</section>
+
+<section class="sec" id="landscape">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">01 · Market landscape</span><h2>Growing fast, <span class="hl">under pressure</span></h2></div>
+    <div class="grid g4">
+      <div class="card"><span class="big">$18.6bn</span>Market, 2025 → ~$56bn by 2034</div>
+      <div class="card"><span class="big">58.9%</span>Value from chains; QSR<sup>*</sup> 43.6%</div>
+      <div class="card"><span class="big">39.5%</span>Value in Dubai</div>
+      <div class="card"><span class="big">~10/day</span>New food outlets in Dubai</div>
+    </div>
+    <div class="sub"><h3>2026: diners moved from tables to delivery</h3><span class="note">H1 2026 vs H1 2025</span></div>
+    <div class="grid g4">
+      <div class="card dark"><span class="big">−10.5%</span>Dine-in orders</div>
+      <div class="card dark"><span class="big">+15.2%</span>Delivery orders</div>
+      <div class="card"><span class="big">−5.5%</span>Restaurant revenue</div>
+      <div class="card"><span class="big">8–11%</span>Typical net margin</div>
+    </div>
+    <div class="sub"><h3>E-invoicing timeline</h3><span class="note">Via an ASP<sup>*</sup></span></div>
+    <div class="tl">
+      <div><b>1 Jan 2027</b>Go-live, revenue ≥ AED<sup>*</sup> 50m</div>
+      <div class="hl"><b>31 Mar 2027</b>Mid-market must appoint an ASP</div>
+      <div><b>1 Jul 2027</b>Go-live, revenue below AED 50m</div>
+      <div><b>Impact</b>Every operator reviews its POS set-up in Year 1</div>
+    </div>
+    <p class="abbr"><b>*QSR</b> Quick-service restaurant · <b>*AED</b> UAE dirham · <b>*ASP</b> Accredited Service Provider — approved partner that sends e-invoices to the tax authority</p>
+  </div>
+</section>
+
+<section class="sec" id="capture">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">02 · Market size &amp; capture</span><h2>Where the <span class="hl">open space</span> is</h2><p>Estimates by establishment type, based on field observations and public sources.</p></div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Establishment type</th><th>Market size</th><th>Main POS today</th><th>Captured by incumbents</th><th>Opportunity for DotPe</th></tr></thead>
+      <tbody>
+      <tr><td><b>Casual dining</b></td><td><span class="tag t-good">Largest</span></td><td>Foodics, Pet Pooja, Oracle, Omega, Sapaad, TMBill</td><td><span class="tag t-good">Low — fragmented</span></td><td><span class="tag t-good">High · priority</span></td></tr>
+      <tr><td><b>QSR &amp; delivery chains</b></td><td><span class="tag t-good">Large</span></td><td>Foodics, Pet Pooja, Omega, Sapaad, Syrve, Posiflex</td><td><span class="tag t-mid">Medium</span></td><td><span class="tag t-mid">Medium</span></td></tr>
+      <tr><td><b>Cafés &amp; bakeries</b></td><td><span class="tag t-mid">Medium</span></td><td>Foodics, Omega, BinPos, Pet Pooja</td><td><span class="tag t-low">High — Foodics-led</span></td><td><span class="tag t-mid">Medium</span></td></tr>
+      <tr><td><b>Fine dining, bars &amp; lounges</b></td><td><span class="tag t-mid">Small, high value</span></td><td>Oracle, Restroworks, Quadranet, Omega</td><td><span class="tag t-mid">Medium — Oracle-led</span></td><td><span class="tag t-mid">Medium</span></td></tr>
+      <tr><td><b>Hotels</b></td><td><span class="tag t-mid">Medium, high value</span></td><td>Oracle, Shiji Infrasys, Touché</td><td><span class="tag t-low">High — locked in</span></td><td><span class="tag t-mid">Medium · from Jul 2027</span></td></tr>
+      </tbody></table></div>
+  </div>
+</section>
+
+<section class="sec" id="competitors">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">03 · Competitive set</span><h2>Who DotPe <span class="hl">will meet</span></h2></div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Player</th><th>Focus</th><th>Pricing</th><th>UAE brands using it</th></tr></thead>
+      <tbody>
+      <tr><td><b>Oracle Simphony</b></td><td>Hotels, fine dining, bars; tied to the hotel PMS<sup>*</sup></td><td>~AED 10k/yr + ~13k add-ons</td><td>P.F. Chang’s · Texas Roadhouse · The Noodle House</td></tr>
+      <tr><td><b>Foodics</b></td><td>SMB<sup>*</sup> to mid-market; moving into full-service</td><td>AED 199 / 375 / 556 per month</td><td>Wingstop · Puranmal · Coffee Planet</td></tr>
+      <tr><td><b>Omega</b></td><td>Long-standing regional POS; QSR franchises, casual and fine dining</td><td>Not published</td><td>Subway · 71 Steak &amp; Grill · Arabeska</td></tr>
+      <tr><td><b>Pet Pooja</b></td><td>Value-priced; Indian-cuisine restaurants</td><td>AED 5,000–6,000 per year</td><td>Sangeetha · Vasanta Bhavan · Chaat Bazaar</td></tr>
+      <tr><td><b>Restroworks</b></td><td>Enterprise chains and fine dining</td><td>On request</td><td>Trèsind · Carnival by Trèsind · Café Bateel</td></tr>
+      <tr><td><b>Lightspeed</b></td><td>Casual dining, cafés, multi-site groups</td><td>Not published</td><td>La Serre · Goldfish Sushi &amp; Yakitori · The Daily</td></tr>
+      <tr><td><b>Revel</b></td><td>Coffee chains, fast casual, franchises</td><td>Not published</td><td>PizzaExpress · Barbar · Comptoir 102</td></tr>
+      <tr><td><b>Quadranet</b></td><td>Luxury dining, beach clubs, nightlife</td><td>Not published</td><td>O Beach · Gigi Rigolatto · SFUMATO</td></tr>
+      <tr><td><b>Syrve</b></td><td>Mid-market, analytics-led</td><td>AED 250 / 350 / 450 per POS</td><td>Pressman’s · Chowking · Hammer Burgers</td></tr>
+      <tr><td><b>Sapaad</b></td><td>Multi-outlet QSR and delivery</td><td>Not published</td><td>Bombay Chowpatty · Moshi · Fisherman’s Hub</td></tr>
+      </tbody></table></div>
+    <div class="card dark" style="margin-top:16px"><p style="margin:0"><b style="color:#fff">The gap:</b> no one offers POS + AI host + guest memory + live P&amp;L<sup>*</sup> in one system.</p></div>
+    <p class="abbr"><b>*PMS</b> Property Management System — a hotel’s core software (e.g. Oracle Opera) for bookings, check-in and room bills; restaurant bills post to rooms through it · <b>*SMB</b> Small and medium-sized business · <b>*P&amp;L</b> Profit and loss</p>
+  </div>
+</section>
+
+<section class="sec" id="swot">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">04 · SWOT<sup>*</sup></span><h2>Strong product, <span class="hl">no local proof yet</span></h2></div>
+    <div class="grid g2 swot">
+      <div class="card s"><h3>Strengths</h3><ul class="clean">
+        <li>Proven at enterprise scale in India</li>
+        <li>Full suite: POS, AI host, guest memory, live P&amp;L</li>
+        <li>Ties with India-origin brands already in the UAE</li></ul></div>
+      <div class="card w"><h3>Weaknesses</h3><ul class="clean">
+        <li>No UAE references or brand awareness</li>
+        <li>Localisation still to prove: Arabic, e-invoicing, local apps</li>
+        <li>No hotel PMS integration or local support yet</li></ul></div>
+      <div class="card o"><h3>Opportunities</h3><ul class="clean">
+        <li>Fragmented casual-dining and multi-outlet groups</li>
+        <li>2027 e-invoicing forces a stack review</li>
+        <li>Margin pressure lifts demand for live P&amp;L and guest data</li></ul></div>
+      <div class="card t"><h3>Threats</h3><ul class="clean">
+        <li>Foodics moving up-market with deep funding</li>
+        <li>Oracle lock-in through PMS links and group contracts</li>
+        <li>Established regional players: Omega, Restroworks</li></ul></div>
+    </div>
+    <p class="abbr"><b>*SWOT</b> Strengths, weaknesses, opportunities, threats</p>
+  </div>
+</section>
+
+<section class="sec" id="gap">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">05 · Gap analysis</span><h2>Market gaps and <span class="hl">what DotPe must close</span></h2></div>
+    <div class="sub" style="margin-top:0"><h3>Market gaps</h3></div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Area</th><th>Today</th><th>Operators need</th><th>DotPe answer</th></tr></thead>
+      <tbody>
+      <tr><td><b>Multi-outlet control</b></td><td>Groups on many separate systems</td><td>Central menu, inventory and P&amp;L</td><td>Rista + Horizon</td></tr>
+      <tr><td><b>Margin visibility</b></td><td>Historical reports only</td><td>Live outlet margins and cost alerts</td><td>Horizon</td></tr>
+      <tr><td><b>Guest data</b></td><td>Held by delivery apps</td><td>Own profiles, retention, win-back</td><td>Sovi + Amello</td></tr>
+      <tr><td><b>Staffing costs</b></td><td>High; headcount cuts in 2026</td><td>Automated enquiries and ordering</td><td>Sova <span class="tag t-mid">Needs Arabic</span></td></tr>
+      <tr><td><b>Premium cost</b></td><td>Oracle ~AED 23k/yr</td><td>Enterprise features, lower cost</td><td>Enterprise plans</td></tr>
+      </tbody></table></div>
+    <div class="sub"><h3>DotPe gaps to close</h3><span class="note">Confirm = to be verified with DotPe</span></div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Requirement</th><th>Why</th><th>Status</th><th>Owner</th></tr></thead>
+      <tbody>
+      <tr><td><b>Arabic interface and receipts</b></td><td>Expected by local operators</td><td><span class="tag t-mid">Build Jan–Mar</span></td><td>India product</td></tr>
+      <tr><td><b>FTA<sup>*</sup> VAT<sup>*</sup> + e-invoicing</b></td><td>Mandatory in 2027</td><td><span class="tag t-mid">Build Jan–Mar</span></td><td>India product + ASP</td></tr>
+      <tr><td><b>Talabat, Deliveroo, Careem, Noon, Keeta</b></td><td>Delivery is 30% of orders</td><td><span class="tag t-mid">Talks Jan–Mar</span></td><td>Country Lead + India integrations</td></tr>
+      <tr><td><b>Local payment terminals</b></td><td>Daily settlement expected</td><td><span class="tag t-conf">Confirm</span></td><td>Payments</td></tr>
+      <tr><td><b>Hotel PMS integration</b></td><td>Needed for any hotel</td><td><span class="tag t-mid">Build Jan–Mar</span></td><td>India tech · hotels from Jul</td></tr>
+      <tr><td><b>Local install and support</b></td><td>Failed go-lives travel fast</td><td><span class="tag t-low">Gap</span></td><td>Country Lead, then Ops Manager</td></tr>
+      <tr><td><b>UAE case studies</b></td><td>Every buyer asks for them</td><td><span class="tag t-low">Gap</span></td><td>Launch Offer clients</td></tr>
+      </tbody></table></div>
+    <p class="abbr"><b>*FTA</b> Federal Tax Authority, the UAE tax regulator · <b>*VAT</b> Value added tax, 5% in the UAE</p>
+  </div>
+</section>
+
+<section class="sec" id="strategy">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">06 · Year-1 market entry plan</span><h2>Win the first clients, <span class="hl">then scale</span></h2><p>January–December 2027</p></div>
+
+    <div class="offer">
+      <div class="give"><h3>Launch Offer · 2027 only</h3><ul class="clean">
+        <li>2027 launch prices</li>
+        <li>Unlimited branches; no onboarding or setup fees</li>
+        <li>Priority support and early feature access</li></ul></div>
+      <div class="get"><h3>In return</h3><ul class="clean">
+        <li>Product feedback in the first 90 days</li>
+        <li>A case study and reference calls</li>
+        <li>Introductions to other operators</li></ul></div>
+    </div>
+    <p class="note" style="margin:-10px 0 24px">Best case, the Launch Offer closes after the first 6 months.</p>
+
+    <div class="phases">
+      <div class="phase"><span class="when">Months 1–3 · Jan–Mar</span><h3>Open doors, build</h3><ul class="clean">
+        <li>Network conversations</li>
+        <li>Partner and delivery-app integrations</li>
+        <li>Arabic, e-invoicing and PMS built</li></ul></div>
+      <div class="phase"><span class="when">Months 4–6 · Apr–Jun</span><h3>First go-lives</h3><ul class="clean">
+        <li>First Launch Offer clients live in Dubai</li>
+        <li>Onboarding by Country Lead + India team</li>
+        <li>First case studies</li></ul></div>
+      <div class="phase"><span class="when">Months 7–12 · Jul–Dec</span><h3>Team and scale</h3><ul class="clean">
+        <li>4 hires join (see Team)</li>
+        <li>Sharjah, Abu Dhabi, other emirates</li>
+        <li>Hotels go live once tech gaps close</li></ul></div>
+    </div>
+
+    <div class="sub"><h3>My first 90 days</h3><span class="note">No deals assumed in January–February</span></div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Weeks</th><th>What I do</th></tr></thead>
+      <tbody>
+      <tr><td><b>1–4 · January</b></td><td>Open conversations with my network · talk to delivery apps on integrations · company setup in parallel</td></tr>
+      <tr><td><b>5–8 · February (Ramadan)</b></td><td>Network meetings and demos · iftar roundtable with operators · India team builds Arabic, e-invoicing and PMS</td></tr>
+      <tr><td><b>9–12 · March</b></td><td>Eid, then Gulfood · first Launch Offer sign-ups · April go-lives scheduled</td></tr>
+      </tbody></table></div>
+    <div class="grid g4" style="margin-top:14px">
+      <div class="card"><span class="big">3+</span>Partners signed: e-invoicing, payments, 2+ delivery apps</div>
+      <div class="card"><span class="big">✓</span>Arabic and PMS in testing</div>
+      <div class="card"><span class="big">15–20</span>Accounts in active talks</div>
+      <div class="card"><span class="big">2–3</span>Launch Offer sign-ups</div>
+    </div>
+    <p class="note" style="margin-top:6px">End-of-March checkpoints.</p>
+
+    <div class="sub"><h3>Target accounts</h3><span class="note">All known contacts</span></div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Group</th><th>Accounts</th><th>Contact</th></tr></thead>
+      <tbody>
+      <tr><td><b>Enterprise F&amp;B groups</b></td><td>Chicking · Landmark Group · Apparel Group · Alshaya · Caesars · Puranmal · Bikanervala</td><td><span class="tag t-good">Known</span></td></tr>
+      <tr><td><b>SMB</b></td><td>Urban Tadka · Haldiram’s · Chaat Bazaar</td><td><span class="tag t-good">Known</span></td></tr>
+      <tr><td><b>Hotels · from Jul 2027</b></td><td>Mama Shelter · Barceló Business Bay · City Premiere</td><td><span class="tag t-good">Known</span></td></tr>
+      </tbody></table></div>
+
+    <div class="sub"><h3>Industry events</h3><span class="note">Dates to confirm except Gulfood</span></div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Event</th><th>When</th><th>Where</th><th>Purpose</th></tr></thead>
+      <tbody>
+      <tr><td><b>Gulfood</b></td><td>15–19 Mar 2027</td><td>Dubai</td><td>Launch and meet group owners · stand optional</td></tr>
+      <tr><td><b>Seamless Middle East</b></td><td>May 2027</td><td>Dubai</td><td>Payment and tech partners</td></tr>
+      <tr><td><b>The Hotel Show</b></td><td>1–3 Jun 2027</td><td>Dubai</td><td>Hotel contacts ahead of July</td></tr>
+      <tr><td><b>SIAL Middle East</b></td><td>Dec 2027</td><td>Abu Dhabi</td><td>Support the Abu Dhabi push</td></tr>
+      <tr><td><b>Operator roundtables</b></td><td>Ramadan, then quarterly</td><td>Dubai, Abu Dhabi</td><td>Hosted with Launch Offer clients</td></tr>
+      </tbody></table></div>
+
+    <div class="grid g2" style="margin-top:24px">
+      <div class="card"><h3>Year-1 targets</h3>
+        <table><thead><tr><th>Metric</th><th class="num">Month 6</th><th class="num">Month 12</th></tr></thead><tbody>
+        <tr><td>Accounts signed</td><td class="num">Network (upside)</td><td class="num">~100</td></tr>
+        <tr><td>Branches</td><td class="num">First go-lives</td><td class="num">~215</td></tr>
+        <tr><td>2027 billings</td><td class="num">—</td><td class="num">~AED 0.66M</td></tr>
+        <tr><td>Case studies</td><td class="num">2</td><td class="num">6+</td></tr>
+        <tr><td>Emirates live</td><td class="num">Dubai</td><td class="num">Dubai, Sharjah, Abu Dhabi</td></tr>
+        <tr><td>Hotels</td><td class="num">—</td><td class="num">Live from July</td></tr>
+        </tbody></table></div>
+      <div class="card"><h3>Checkpoints before more spend</h3><ul class="clean">
+        <li>5+ groups live for 90+ days</li>
+        <li>Localisation and e-invoicing in production</li>
+        <li>3+ case studies with measured results</li>
+        <li>Sales Executives at 80%+ of target after runway</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="pricing">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">07 · Pricing</span><h2>Priced to win, <span class="hl">built to give more</span></h2></div>
+    <div class="price-head"><p style="margin:0"><b>One yearly plan per establishment type.</b> Unlimited branches · no onboarding or setup fee · your customer data is always yours, with no add-on needed. Complete freedom.</p></div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Segment</th><th>Plan</th><th>Includes</th><th class="num">2027 launch price / year</th><th>Competitor reference</th><th>Target accounts</th></tr></thead>
+      <tbody>
+      <tr><td rowspan="3"><b>SMB</b><br><span class="note">Cafés, QSR, independents</span></td><td><b>Starter</b></td><td>Rista</td><td class="num"><b>AED 4,000</b></td><td rowspan="3">Pet Pooja AED 5–6k / yr<br>Foodics AED 199–556 / month per branch</td><td rowspan="3">Urban Tadka · Haldiram’s · Chaat Bazaar</td></tr>
+      <tr><td><b>Plus</b></td><td>Rista + 1 module of choice</td><td class="num"><b>AED 6,000</b></td></tr>
+      <tr><td><b>All Access</b></td><td>Rista + Sova, Sovi, Horizon, Amello</td><td class="num"><b>AED 10,000</b></td></tr>
+      <tr><td rowspan="2"><b>Enterprise</b><br><span class="note">F&amp;B groups and chains</span></td><td><b>Level 1</b></td><td>Rista + Sovi + Sova</td><td class="num"><b>AED 12,000</b></td><td rowspan="2">Oracle ~AED 23k / yr<br>Omega, Restroworks on request</td><td rowspan="2">Chicking · Puranmal · Bikanervala · Caesars</td></tr>
+      <tr><td><b>Level 2</b></td><td>Rista + all AI agents</td><td class="num"><b>AED 16,000</b></td></tr>
+      <tr><td><b>Hotels</b><br><span class="note">From Jul 2027</span></td><td><b>Enterprise Level 1 or 2</b></td><td>As above + PMS connection</td><td class="num"><b>AED 12,000–16,000</b></td><td>Oracle + Opera PMS · Shiji Infrasys</td><td>Mama Shelter · Barceló Business Bay · City Premiere</td></tr>
+      </tbody></table></div>
+    <p class="note" style="margin-top:8px">All prices are 2027 launch prices and will be revised after Year 1. Prices are not published; each client is offered the one plan that fits its establishment type. A cap on branches is a point for discussion with management.</p>
+  </div>
+</section>
+
+<section class="sec" id="org">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">08 · Team</span><h2>UAE <span class="hl">team structure</span></h2></div>
+    <div class="chart-card">
+      <div class="sub" style="margin:0 0 20px">
+        <div class="tabs" role="tablist" id="orgTabs">
+          <button role="tab" aria-selected="false" data-phase="0">Months 1–6</button>
+          <button role="tab" aria-selected="true" data-phase="1">Months 7–12</button>
+          <button role="tab" aria-selected="false" data-phase="2">Year 2</button>
+        </div>
+        <span class="note" id="orgCount"></span>
+      </div>
+      <div class="leads">
+        <div class="node" data-ph="0"><b>Country Lead · 1</b><span class="meta">Sales, partners, onboarding</span><span class="sal" style="margin:8px auto 0">AED 35,000 · no commission</span></div>
+      </div>
+      <div class="trunk" style="margin-top:16px"></div>
+      <div class="org2">
+        <div class="col2"><div class="branch-head">Sales</div>
+          <div class="node" data-ph="1"><span class="ph ph2">Month 7</span><b>Enterprise Sales Executive · 1</b><span class="meta">2–3 enterprise accounts a month</span><span class="sal">AED 20,000 · no commission</span></div>
+          <div class="node" data-ph="1"><span class="ph ph2">Month 7</span><b>Sales Executive · 2</b><span class="meta">SMB only · 15 branches a month each</span><span class="sal">AED 15,000 each + quarterly commission<sup>†</sup></span></div>
+          <div class="node y2" data-ph="2"><span class="ph ph3">Year 2</span><b>Enterprise Sales Executive · +1</b><span class="meta">Per Year-2 strategy</span></div>
+          <div class="node y2" data-ph="2"><span class="ph ph3">Year 2</span><b>Sales Executive · +1</b><span class="meta">Per Year-2 strategy</span></div>
+        </div>
+        <div class="col2"><div class="branch-head">Operations</div>
+          <div class="node" data-ph="1"><span class="ph ph2">Month 7</span><b>Operations Manager · 1</b><span class="meta">From India or relocated</span><span class="sal">AED 10,000</span></div>
+          <div class="node y2" data-ph="2"><span class="ph ph3">Year 2</span><b>Customer Success · 1</b></div>
+        </div>
+        <div class="col2"><div class="branch-head">Technology</div>
+          <div class="node" data-ph="0" style="background:transparent;box-shadow:none;border-style:dotted"><b>India team</b><span class="meta">Product, integrations, 24×7 support</span></div>
+          <div class="node y2" data-ph="2"><span class="ph ph3">Year 2</span><b>UAE tech team · 2–3</b></div>
+        </div>
+      </div>
+      <p class="note" style="margin-top:18px">Monthly base salaries. <sup>†</sup>New Sales Executives get a 3-month runway; targets can be adjusted case by case.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="numbers">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">09 · 2027 numbers</span><h2>What 2027 <span class="hl">costs and returns</span></h2><p>Worst case: no deals from my network in months 1–6.</p></div>
+    <div class="grid g3">
+      <div class="card"><span class="big">~AED 0.98M</span>2027 investment<br><span class="note">~AED 1.07M with Gulfood stand</span></div>
+      <div class="card"><span class="big">~AED 0.66M</span>2027 billings<br><span class="note">Yearly fees, paid upfront</span></div>
+      <div class="card dark"><span class="big">~AED 0.31M</span>Net 2027 investment<br><span class="note" style="color:#B9B3D6">~AED 0.41M with Gulfood stand</span></div>
+    </div>
+
+    <div class="grid g2" style="margin-top:24px;align-items:start">
+      <div>
+        <div class="sub" style="margin-top:0"><h3>Costs</h3></div>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Item</th><th>Basis</th><th class="num">AED</th></tr></thead>
+          <tbody>
+          <tr><td>Country Lead</td><td>35,000 × 12 · no commission</td><td class="num">420,000</td></tr>
+          <tr><td>Operations Manager</td><td>10,000 × 6</td><td class="num">60,000</td></tr>
+          <tr><td>Enterprise Sales Executive</td><td>20,000 × 6 · no commission</td><td class="num">120,000</td></tr>
+          <tr><td>Sales Executives × 2</td><td>15,000 × 6 each</td><td class="num">180,000</td></tr>
+          <tr><td>Commission</td><td>SMB only · maximum</td><td class="num">60,000</td></tr>
+          <tr><td>Visas</td><td>~6,000 × 5</td><td class="num">30,000</td></tr>
+          <tr><td>Health insurance</td><td>~7,400 × 5</td><td class="num">37,000</td></tr>
+          <tr><td>Phone &amp; fuel</td><td>1,800 / person / month</td><td class="num">64,800</td></tr>
+          <tr><td>Industry events</td><td>Visit only</td><td class="num">5,000</td></tr>
+          <tr style="background:var(--tint)"><td><b>Total</b></td><td></td><td class="num"><b>~976,800</b></td></tr>
+          <tr><td>Gulfood stand <span class="tag t-mid">Optional</span></td><td>Recommended marketing option</td><td class="num">~95,000</td></tr>
+          </tbody></table></div>
+      </div>
+      <div>
+        <div class="sub" style="margin-top:0"><h3>Billings</h3></div>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Segment</th><th class="num">Branches</th><th class="num">Accounts</th><th class="num">Avg / year</th><th class="num">AED</th></tr></thead>
+          <tbody>
+          <tr><td>SMB · months 7–12</td><td class="num">~135</td><td class="num">~90</td><td class="num">5,800</td><td class="num">~522,000</td></tr>
+          <tr><td>Enterprise · months 7–12</td><td class="num">~80</td><td class="num">~10</td><td class="num">14,000</td><td class="num">~140,000</td></tr>
+          <tr><td>Network · months 1–6</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">Upside</td></tr>
+          <tr style="background:var(--tint)"><td><b>Total</b></td><td class="num"><b>~215</b></td><td class="num"><b>~100</b></td><td class="num"></td><td class="num"><b>~662,000</b></td></tr>
+          </tbody></table></div>
+        <div class="grid g2" style="margin-top:16px">
+          <div class="card"><h3>Commission · SMB</h3><ul class="clean">
+            <li>Target: 15 branches a month</li>
+            <li>AED 5,000 a month at 100%, pro-rata from 80%</li>
+            <li>Paid quarterly on the quarter’s total</li></ul></div>
+          <div class="card"><h3>Upside not counted</h3><ul class="clean">
+            <li>+~AED 58k per 10 network SMB accounts</li>
+            <li>+~AED 14k per enterprise account</li>
+            <li>2028 renewals at revised prices</li></ul></div>
+        </div>
+      </div>
+    </div>
+    <p class="note" style="margin-top:14px">Allowances: phone AED 300 and fuel AED 1,500 per person per month, against receipts. Assumptions: months 7–9 at 50% of target (runway), 100% from month 10; ~1.5 branches per SMB and ~8 per enterprise account; SMB mix 50% Starter, 30% Plus, 20% All Access; enterprise 50/50 Level 1 and 2.</p>
+  </div>
+</section>
+
+<section class="sec" id="expansion">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">10 · Beyond Year 2</span><h2>New countries <span class="hl">or</span> new sectors</h2><p>One in Year 3, the other in Year 4 — no expansion before Year 2 succeeds.</p></div>
+    <div class="paths">
+      <div class="path"><span class="when">Path A · Countries first</span><h3>New country</h3><ol>
+        <li><b>Year 3:</b> KSA<sup>*</sup>, then Qatar or Kuwait</li>
+        <li><b>Year 4:</b> UAE retail and services</li></ol></div>
+      <div class="or">OR</div>
+      <div class="path"><span class="when">Path B · Sectors first</span><h3>New sectors in the UAE</h3><ol>
+        <li><b>Year 3:</b> food retail, then salons and spas</li>
+        <li><b>Year 4:</b> KSA</li></ol></div>
+    </div>
+    <div class="trigger"><h3>Decision at end of Year 2 <span class="tag" style="background:rgba(255,255,255,.15);color:#fff;margin-left:8px;vertical-align:middle">Indicative</span></h3>
+      <table><thead><tr><th>If by December 2028</th><th>Then</th></tr></thead><tbody>
+      <tr><td>250+ outlets, 25+ groups, churn below 5%</td><td><b>Path A</b> — countries first</td></tr>
+      <tr><td>Below 250 outlets or pipeline slowing</td><td><b>Path B</b> — sectors first</td></tr>
+      </tbody></table>
+    </div>
+    <p class="abbr"><b>*KSA</b> Kingdom of Saudi Arabia</p>
+  </div>
+</section>
+
+
+
+</main>
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div><span style="color:#fff;display:block;width:120px;margin-bottom:14px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102.858 26.209" role="img" aria-label="DotPe" fill="currentColor"><g transform="translate(15792.213 8901.324)"><path d="M8.627-19.6H1.894V-2.965H8.627c5.023,0,8.587-3.477,8.587-8.331S13.664-19.6,8.627-19.6ZM8.411-7.162H6.5V-15.4H8.411A3.877,3.877,0,0,1,12.516-11.3,3.906,3.906,0,0,1,8.411-7.162ZM25.829-2.544c4.17,0,7.195-2.873,7.195-6.837S30-16.218,25.829-16.218s-7.195,2.859-7.195,6.837S21.645-2.544,25.829-2.544Zm0-3.971a2.7,2.7,0,0,1-2.768-2.866,2.7,2.7,0,0,1,2.768-2.866A2.707,2.707,0,0,1,28.6-9.381a2.7,2.7,0,0,1-2.768,2.866Zm16-.321A1.361,1.361,0,0,1,40.347-8.31v-4.084h3.112v-3.4H40.235V-19.55h-.908l-5.75,6.123v1.033h2.349v4.842a4.222,4.222,0,0,0,4.563,4.587H43.53V-6.836ZM52.894-19.6H45.811V-2.965H50.4V-7.559h2.489a5.921,5.921,0,0,0,6.163-6.03A5.905,5.905,0,0,0,52.894-19.6Zm-.549,8.039H50.4V-15.6h1.94a1.911,1.911,0,0,1,2,2.019A1.911,1.911,0,0,1,52.344-11.561ZM74.074-9.5a6.664,6.664,0,0,0-7-6.715A6.692,6.692,0,0,0,60.1-9.391a6.73,6.73,0,0,0,6.97,6.847A6.757,6.757,0,0,0,73.792-7.3h-4.4a2.577,2.577,0,0,1-2.32,1.2,2.493,2.493,0,0,1-2.62-2.233h9.529a8.131,8.131,0,0,0,.091-1.17Zm-7-3.252a2.579,2.579,0,0,1,2.646,1.975H64.531A2.484,2.484,0,0,1,67.073-12.755Z" transform="translate(-15763.429 -8877.148)"/><path d="M21.72,0a4.357,4.357,0,0,1,4.344,4.369V21.84a4.357,4.357,0,0,1-4.344,4.369H4.345A4.357,4.357,0,0,1,0,21.84V4.369A4.357,4.357,0,0,1,4.345,0ZM7.6,8.738a2.548,2.548,0,1,0,2.534,2.548A2.548,2.548,0,0,0,7.6,8.738Zm10.859,0A2.548,2.548,0,1,0,21,11.286,2.548,2.548,0,0,0,18.462,8.738Z" transform="translate(-15792.213 -8901.324)" fill-rule="evenodd"/></g></svg></span><p>UAE market entry · Prepared for DotPe</p></div>
+    <div><h4>Market</h4><a href="#landscape">Landscape</a><a href="#capture">Market capture</a><a href="#competitors">Competitors</a></div>
+    <div><h4>Analysis</h4><a href="#swot">SWOT</a><a href="#gap">Gap</a></div>
+    <div><h4>Plan</h4><a href="#strategy">Year-1 plan</a><a href="#pricing">Pricing</a><a href="#org">Team</a><a href="#numbers">Numbers</a><a href="#expansion">Expansion</a></div>
+  </div>
+  <div class="fine">Market figures: IMARC, Dubai Municipality, Syrve MENA, KPMG. Brand–POS links from field observations. DotPe name and logo belong to DotPe.</div>
+</div></footer>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const links=$$('#navlinks a'); const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+function onScroll(){
+  const h=document.documentElement; $('#progress').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+  let cur=0; secs.forEach((s,i)=>{ if(s && s.getBoundingClientRect().top<120) cur=i; });
+  links.forEach((a,i)=>a.classList.toggle('active',i===cur));
+}
+addEventListener('scroll',onScroll,{passive:true}); onScroll();
+function setPhase(ph){
+  $$('#org .node[data-ph]').forEach(n=>n.classList.toggle('off',+n.dataset.ph>ph));
+  $('#orgCount').textContent=['Country Lead','Country Lead + 4 hires','Year 2: 10–11 roles'][ph];
+}
+$$('#orgTabs button').forEach(b=>b.addEventListener('click',()=>{$$('#orgTabs button').forEach(x=>x.setAttribute('aria-selected',x===b));setPhase(+b.dataset.phase);}));
+setPhase(1);
+})();
+</script>
+</body>
+</html>
